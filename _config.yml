@@ -18,22 +18,81 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: The C Blog
+title_separator: "|"
+email: fabien.culpo@gmail.com
+name: Fabien Culpo
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: jekyll
+
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://fabien.culpo.fr" # the base hostname & protocol for your site, e.g. http://example.com
+
+author:
+  name: "Fabien Culpo"
+  avatar: "/assets/img/profile.jpg"
+  bio: "My awesome biography constrained to a sentence or two goes here."
+  location: "Lyon, France"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/fculpo"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/fculpo"
+
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-light" # "github-dark"
+    issue_term: "pathname"
+
+search: true
+
+twitter:
+  username: "fculpo"
+
+social:
+  type: Person
+  links:
+    - "https://twitter.com/fculpo"
+    - "https://www.linkedin.com/in/fabienculpo"
+
+twitter_username: fculpo
+github_username: fculpo
+
+repository: "fculpo/blog"
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.19.1"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-sitemap
+
+minimal_mistakes_skin: air
+
+timezone: Europe/Paris
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      author_profile: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
